@@ -1,0 +1,170 @@
+@import url("style.css");
+
+:root {
+  --bg: #fffaf4;
+  --bg-soft: #f5e9d7;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: rgba(255, 255, 255, 0.96);
+  --primary: #9f141c;
+  --primary-deep: #6f0c12;
+  --primary-bright: #c11f2d;
+  --accent: #d4af37;
+  --accent-soft: #f4e7c2;
+  --text: #301112;
+  --muted: #6a4c3a;
+  --line: rgba(159, 20, 28, 0.16);
+  --shadow: 0 18px 45px rgba(111, 12, 18, 0.12);
+}
+
+body {
+  background:
+    linear-gradient(165deg, #c11f2d 0%, #a01823 52%, #7a1118 100%);
+  color: var(--text);
+}
+
+body::before {
+  content: none;
+}
+
+.topbar-links a {
+  color: var(--primary-deep);
+}
+
+.lead,
+.hero-details,
+.intro-strip p,
+.tab-panel p,
+.footer p,
+.gallery-intro,
+.photo-intro,
+.photo-card figcaption span,
+#lightbox-caption {
+  color: var(--muted);
+}
+
+.hero-card,
+.tabs-section,
+.intro-strip article,
+.gallery-card,
+.photo-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(254, 247, 237, 0.92));
+  border: 1px solid rgba(159, 20, 28, 0.14);
+  box-shadow: var(--shadow);
+}
+
+.button-solid {
+  color: #fffaf4;
+  background: linear-gradient(135deg, var(--primary-bright), var(--primary));
+}
+
+.button-ghost {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(159, 20, 28, 0.25);
+}
+
+.card-tag {
+  background: rgba(212, 175, 55, 0.22);
+  color: var(--primary-deep);
+}
+
+.gallery-card-quote {
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.22), transparent 34%),
+    linear-gradient(180deg, rgba(159, 20, 28, 0.13), rgba(255, 255, 255, 0.96));
+}
+
+.artwork {
+  border-bottom: 1px solid rgba(159, 20, 28, 0.14);
+}
+
+.artwork-01 {
+  background:
+    linear-gradient(135deg, rgba(212, 175, 55, 0.26), transparent 52%),
+    linear-gradient(180deg, #ffe9dd 0%, #f8dac9 100%);
+}
+
+.artwork-01 span:nth-child(1) {
+  background: linear-gradient(180deg, rgba(159, 20, 28, 0.72), rgba(159, 20, 28, 0.18));
+}
+
+.artwork-01 span:nth-child(2) {
+  background: rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(159, 20, 28, 0.2);
+}
+
+.artwork-01 span:nth-child(3) {
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0));
+}
+
+.artwork-02 {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.32), transparent 24%),
+    linear-gradient(180deg, #ffe6d7 0%, #f5d2be 100%);
+}
+
+.artwork-02 span:nth-child(1) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.18));
+  border: 1px solid rgba(159, 20, 28, 0.18);
+}
+
+.artwork-02 span:nth-child(2) {
+  background: linear-gradient(90deg, rgba(159, 20, 28, 0.84), rgba(212, 175, 55, 0.28));
+}
+
+.artwork-03 {
+  background:
+    linear-gradient(90deg, rgba(212, 175, 55, 0.2), transparent 48%),
+    linear-gradient(180deg, #ffe3d0 0%, #f4cfba 100%);
+}
+
+.artwork-03 span:nth-child(1) {
+  background: rgba(255, 255, 255, 0.54);
+  border: 1px solid rgba(159, 20, 28, 0.2);
+}
+
+.artwork-03 span:nth-child(2) {
+  background: linear-gradient(180deg, rgba(159, 20, 28, 0.84), rgba(212, 175, 55, 0.24));
+}
+
+.artwork-03 span:nth-child(3) {
+  background: rgba(212, 175, 55, 0.32);
+}
+
+.gallery-meta {
+  color: var(--primary);
+}
+
+.photo-card img {
+  background: #f4dfc7;
+}
+
+.tab-button:hover,
+.tab-button:focus-visible {
+  border-color: rgba(159, 20, 28, 0.35);
+}
+
+.tab-button.active {
+  color: #fffaf4;
+  background: linear-gradient(135deg, rgba(193, 31, 45, 0.82), rgba(159, 20, 28, 0.9));
+  border-color: rgba(159, 20, 28, 0.38);
+}
+
+.lightbox-backdrop {
+  background: rgba(64, 21, 23, 0.5);
+}
+
+.lightbox-dialog {
+  border: 1px solid rgba(159, 20, 28, 0.2);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(254, 245, 231, 0.96));
+}
+
+.lightbox-dialog img {
+  background: #fbf0e1;
+}
+
+.lightbox-nav,
+.lightbox-close {
+  border: 1px solid rgba(159, 20, 28, 0.24);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--primary-deep);
+}
