@@ -1,5 +1,3 @@
-const tabButtons = document.querySelectorAll('[data-tab]');
-const tabPanels = document.querySelectorAll('[data-panel]');
 const currentYear = document.querySelector('#current-year');
 const photoTriggers = document.querySelectorAll('.photo-trigger');
 const lightbox = document.querySelector('#lightbox');
@@ -11,26 +9,6 @@ const lightboxPrev = document.querySelector('#lightbox-prev');
 const lightboxNext = document.querySelector('#lightbox-next');
 
 let currentLightboxIndex = -1;
-
-function activateTab(tabName) {
-  tabButtons.forEach((button) => {
-    const isActive = button.dataset.tab === tabName;
-    button.classList.toggle('active', isActive);
-    button.setAttribute('aria-selected', String(isActive));
-  });
-
-  tabPanels.forEach((panel) => {
-    const isActive = panel.dataset.panel === tabName;
-    panel.classList.toggle('active', isActive);
-    panel.hidden = !isActive;
-  });
-}
-
-tabButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    activateTab(button.dataset.tab);
-  });
-});
 
 function closeLightbox() {
   if (!lightbox || !lightboxImage || !lightboxCaption) {
