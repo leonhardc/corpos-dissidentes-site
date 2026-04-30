@@ -374,14 +374,16 @@ body::before {
 
 /* Artist Modal */
 .artist-modal-dialog {
-  max-width: 700px;
-  width: 90%;
-  padding: 48px 32px;
-  overflow-y: auto;
+  max-width: 960px;
+  width: 95%;
+  padding: 64px 40px;
+  overflow-y: visible;
+  overflow-x: visible;
+  max-height: none;
 }
 
 .artist-modal-content {
-  max-width: 580px;
+  max-width: 820px;
   margin: 0 auto;
 }
 
@@ -611,7 +613,8 @@ body::before {
   z-index: 1000;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: 60px 24px;
+  overflow-y: auto;
 }
 
 .lightbox[hidden] {
@@ -679,11 +682,21 @@ body::before {
 }
 
 .lightbox-prev {
-  left: 18px;
+  left: -26px;
 }
 
 .lightbox-next {
-  right: 18px;
+  right: -26px;
+}
+
+@media (max-width: 1024px) {
+  .lightbox-prev {
+    left: 12px;
+  }
+  
+  .lightbox-next {
+    right: 12px;
+  }
 }
 
 .lightbox-close {
@@ -796,8 +809,17 @@ body::before {
   gap: 20px;
 }
 
+.author-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+
 .author-photo {
   width: 100%;
+  max-width: 320px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 12px;
