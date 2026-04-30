@@ -104,3 +104,72 @@ document.addEventListener('keydown', (event) => {
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
 }
+
+/**
+ * Artist Bio Modal Logic
+ */
+const artistModal = document.querySelector('#artist-modal');
+const artistTriggers = document.querySelectorAll('.artist-modal-trigger');
+const modalArtistName = document.querySelector('#modal-artist-name');
+const modalArtistPhoto = document.querySelector('#modal-artist-photo');
+const modalArtistBio = document.querySelector('#modal-artist-bio');
+const modalArtistInstagram = document.querySelector('#modal-artist-instagram');
+const modalClose = document.querySelector('#modal-close');
+const modalPrev = document.querySelector('#modal-prev');
+const modalNext = document.querySelector('#modal-next');
+const modalBackdrop = artistModal?.querySelector('.lightbox-backdrop');
+
+let currentArtistIndex = -1;
+
+function closeArtistModal() {
+  if (!artistModal) return;
+  artistModal.hidden = true;
+  document.body.style.overflow = '';
+  currentArtistIndex = -1;
+}
+
+function renderArtistModal(index) {
+  const trigger = artistTriggers[index];
+  if (!trigger) return;
+
+  modalArtistName.textContent = trigger.dataset.artistName;
+  modalArtistPhoto.src = trigger.dataset.artistPhoto;
+  modalArtistPhoto.alt = trigger.dataset.artistName;
+  modalArtistBio.textContent = trigger.dataset.artistBio;
+  modalArtistInstagram.href = trigger.dataset.artistInstagram;
+  
+  currentArtistIndex = index;
+}
+
+function openArtistModal(index) {
+  if (!artistModal || index === -1) return;
+  renderArtistModal(index);
+  artistModal.hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+
+function navigateArtistModal(direction) {
+  if (!artistTriggers.length || currentArtistIndex === -1) return;
+  const nextIndex = (currentArtistIndex + direction + artistTriggers.length) % artistTriggers.length;
+  renderArtistModal(nextIndex);
+}
+
+artistTriggers.forEach((trigger, index) => {
+  trigger.addEventListener('click', () => {
+    openArtistModal(index);
+  });
+});
+
+modalClose?.addEventListener('click', closeArtistModal);
+modalBackdrop?.addEventListener('click', closeArtistModal);
+modalPrev?.addEventListener('click', () => navigateArtistModal(-1));
+modalNext?.addEventListener('click', () => navigateArtistModal(1));
+
+// Keyboard support for Artist Modal
+document.addEventListener('keydown', (event) => {
+  if (artistModal && !artistModal.hidden) {
+    if (event.key === 'Escape') closeArtistModal();
+    if (event.key === 'ArrowLeft') navigateArtistModal(-1);
+    if (event.key === 'ArrowRight') navigateArtistModal(1);
+  }
+});
