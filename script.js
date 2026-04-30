@@ -114,6 +114,8 @@ const modalArtistName = document.querySelector('#modal-artist-name');
 const modalArtistPhoto = document.querySelector('#modal-artist-photo');
 const modalArtistBio = document.querySelector('#modal-artist-bio');
 const modalArtistInstagram = document.querySelector('#modal-artist-instagram');
+const modalArtistSpotify = document.querySelector('#modal-artist-spotify');
+const modalArtistYoutube = document.querySelector('#modal-artist-youtube');
 const modalClose = document.querySelector('#modal-close');
 const modalPrev = document.querySelector('#modal-prev');
 const modalNext = document.querySelector('#modal-next');
@@ -137,6 +139,20 @@ function renderArtistModal(index) {
   modalArtistPhoto.alt = trigger.dataset.artistName;
   modalArtistBio.textContent = trigger.dataset.artistBio;
   modalArtistInstagram.href = trigger.dataset.artistInstagram;
+
+  if (trigger.dataset.artistSpotify) {
+    modalArtistSpotify.href = trigger.dataset.artistSpotify;
+    modalArtistSpotify.style.display = 'flex';
+  } else {
+    modalArtistSpotify.style.display = 'none';
+  }
+
+  if (trigger.dataset.artistYoutube) {
+    modalArtistYoutube.href = trigger.dataset.artistYoutube;
+    modalArtistYoutube.style.display = 'flex';
+  } else {
+    modalArtistYoutube.style.display = 'none';
+  }
   
   currentArtistIndex = index;
 }
