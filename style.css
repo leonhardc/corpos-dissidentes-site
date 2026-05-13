@@ -835,6 +835,93 @@ body::before {
   color: var(--primary);
 }
 
+.workshop-card {
+  margin-top: 48px;
+  padding: 48px 40px;
+  border-radius: 34px;
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  background-image: url('assets/textures/textura_corpos_dissidentes_branco.png');
+  background-size: 400px;
+}
+
+.workshop-card-content {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.workshop-card h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: var(--primary);
+  margin: 10px 0 24px;
+  line-height: 1.2;
+}
+
+.workshop-card p, .workshop-card ul {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.workshop-card ul {
+  padding-left: 20px;
+}
+
+.workshop-card h4 {
+  color: var(--text);
+  font-family: var(--font-heading);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.workshop-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--line);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+.workshop-gallery {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.workshop-photo-card {
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+  background: var(--bg-soft);
+}
+
+.workshop-photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.workshop-photo-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .workshop-card {
+    padding: 32px 20px;
+  }
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
