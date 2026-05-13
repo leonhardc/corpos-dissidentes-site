@@ -950,8 +950,28 @@ body::before {
   .intro-strip,
   .panel-grid,
   .gallery-grid,
-  .photo-grid {
+  .photo-grid,
+  .workshop-gallery {
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .hero-card,
+  .photo-card,
+  .workshop-photo-card,
+  .artist-card {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-copy, .section-heading {
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
   }
 
   .hero-card {
@@ -971,11 +991,14 @@ body::before {
   .topbar,
   .footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .topbar-links {
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
   }
 
   .tabs-section {
@@ -983,7 +1006,7 @@ body::before {
   }
 
   .hero-copy h1 {
-    font-size: clamp(3.2rem, 18vw, 5rem);
+    font-size: clamp(2.8rem, 15vw, 4rem);
   }
 
   .tab-panels {
@@ -996,5 +1019,13 @@ body::before {
 
   .lightbox-dialog {
     padding: 14px 14px 18px;
+  }
+
+  .workshop-card {
+    padding: 32px 16px;
+  }
+
+  .workshop-card h3 {
+    text-align: center;
   }
 }
